@@ -29,7 +29,7 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
 
 resource "aws_s3_bucket_policy" "website" {
     bucket = aws_s3_bucket.website.id
-    policy = jsondecode(({
+    policy = jsonencode(({
         Version = "2012-10-17"
         Statement = {
             Sid = "Allowed"
