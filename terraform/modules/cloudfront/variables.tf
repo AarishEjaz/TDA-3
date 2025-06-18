@@ -9,3 +9,7 @@ variable "cloudfront_config" {
     })
   
 }
+
+variable "environment" {
+  type = string
+}
