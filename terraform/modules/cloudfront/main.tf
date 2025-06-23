@@ -1,4 +1,4 @@
-resource "aws_cloudfront_distribution" "name" {
+resource "aws_cloudfront_distribution" "website" {
   enabled = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
@@ -17,7 +17,7 @@ resource "aws_cloudfront_distribution" "name" {
   }
 
   default_cache_behavior {
-    allowed_methods = ["GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
+    allowed_methods = ["GET", "HEAD", "OPTIONS"]
     cached_methods = ["GET", "HEAD"]
     target_origin_id = "S3-${var.cloudfront_config.bucket_name}"
 

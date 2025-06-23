@@ -13,6 +13,7 @@ module "cdn" {
         bucket_name = module.static_website.bucket_domain_name
         bucket_domain_name = module.static_website.bucket_domain_name
         origin_access_identity_path = module.static_website.origin_access_identity_path
+        price_class = var.cloudfront_config.price_class
     }
     environment = var.environment
 }

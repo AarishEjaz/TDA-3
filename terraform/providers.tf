@@ -1,6 +1,6 @@
 terraform {
     backend "s3"{
-        bucket = "my-aarish-tf-test-bucket "
+        bucket = "my-aarish-tf-test-bucket"
         key = "terraform.tfstate"
         region = "ap-south-1"
 
@@ -8,5 +8,5 @@ terraform {
 }
 
 provider "aws" {
-    region = var.aws.region
+    region = var.aws_region
 }

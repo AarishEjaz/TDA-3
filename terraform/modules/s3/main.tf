@@ -23,7 +23,7 @@ resource "aws_s3_bucket_versioning" "website" {
   }
 }
 
-resource "aws_clourfront_origin_access_identity" "oai"{
+resource "aws_cloudfront_origin_access_identity" "oai"{
     comment = "OAI for ${var.bucket_name}"
 }
 
@@ -36,7 +36,7 @@ resource "aws_s3_bucket_policy" "website" {
             Sid = "AllowedCloudFrontServicePrincipal"
             Effect = "Allow"
             Principal = {
-                AWS = aws_clourfront_origin_access_identity.oai.iam_arn
+                AWS = aws_cloudfront_origin_access_identity.oai.iam_arn
             }
             Action = "s3:GetObject"
             Resource = "${aws_s3_bucket.website.arn}/*"
