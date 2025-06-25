@@ -1,6 +1,7 @@
 variable "cloudfront_config" {
     type = object({
       bucket_name = string
+      regional_bucket_domain_name = string
       bucket_domain_name = string
       origin_access_identity_path = string
       price_class = string

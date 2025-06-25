@@ -8,7 +8,7 @@ resource "aws_cloudfront_distribution" "website" {
   price_class = var.cloudfront_config.price_class
 
   origin {
-    domain_name = var.cloudfront_config.bucket_domain_name
+    domain_name = var.cloudfront_config.regional_bucket_domain_name
     origin_id = "S3-${var.cloudfront_config.bucket_name}"
 
     s3_origin_config {
