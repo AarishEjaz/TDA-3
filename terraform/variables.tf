@@ -18,3 +18,18 @@ variable "aws_region" {
   type = string
   
 }
+
+variable "alb_config" {
+
+  type = object({
+    public_subnet_ids = list(string)
+    certificate_arn = string 
+  })
+  
+}
+
+variable "instance_config" {
+  type = object({
+    vpc_id = string 
+  })
+}

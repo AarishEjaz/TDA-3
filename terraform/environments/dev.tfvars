@@ -11,3 +11,12 @@ cloudfront_config = {
     bucket_domain_name = ""
     origin_access_identity_path = ""
 }
+
+instance_config = {
+    vpc_id="vpc-005a5bb653287e80f"
+}
+
+alb_config = {
+    public_subnet_ids = ["subnet-0feeed73d791fb5a6","subnet-0b7b947f70b571b0a","subnet-06768d8197d5c6de7"]
+    certificate_arn = "arn:aws:acm:ap-south-1:658741521186:certificate/c6885461-47cb-40aa-90db-75dc5d55b3c0"
+}

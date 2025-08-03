@@ -18,3 +18,13 @@ module "cdn" {
     }
     environment = var.environment
 }
+
+module "alb" {
+    source = "./modules/alb"
+    environment = var.environment
+    alb_config = {
+      vpc_id = var.instance_config.vpc_id
+      public_subnet_ids = var.alb_config.public_subnet_ids
+      certificate_arn = var.alb_config.certificate_arn
+    }
+}
